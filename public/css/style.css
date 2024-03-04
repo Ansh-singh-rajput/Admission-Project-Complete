@@ -3,7 +3,7 @@
 ------------------------------------------------------------------ */
 
 body{
-    background: #f7f0bd !important;
+    background: #2bbb78 !important;
 }
 
 /* ::placeholder{
@@ -24,7 +24,7 @@ label{
 ------------------------------------------------------------------ */
 
 #navbar nav{
-    background: #0000009c !important;
+    background: #a743439c !important;
 }
 
 .webViewPosition{
@@ -44,7 +44,7 @@ label{
 ------------------------------------------------------------------ */
 
 .bglogin{
-    background: #f7f0bd;
+    background: #108296;
 }
 
 /* ---------------------------------------------------------------
@@ -53,7 +53,7 @@ label{
 
 #footer
 {
-    background: #2a1a6f;
+    background: black;
 }
 
 #social{

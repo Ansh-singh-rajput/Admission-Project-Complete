@@ -1,6 +1,6 @@
 const express = require('express')
 const app =express()
-const port =4000
+const port =3000
 const web=require("./routes/web")
 
 const cookieparser =require('cookie-parser')
@@ -42,7 +42,7 @@ app.set('view engine', 'ejs')
 
 
 
-//router load http://localhost:4000/ (/)
+//router load http://localhost:3000/ (/)
 app.use('/' ,web)
 
 

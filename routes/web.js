@@ -4,6 +4,8 @@ const route=express.Router()
 const checkUserAuth=require('../middleware/auth')
 const CourseController = require('../controllers/CourseController')
 const AdminController = require('../controllers/AdminController')
+const ContactController = require('../controllers/ContactController');
+
 
 
 
@@ -40,6 +42,11 @@ route.get("/courseView/:id",checkUserAuth,CourseController.courseView)
 route.get("/courseEdit/:id",checkUserAuth,CourseController.courseEdit)
 route.post("/courseUpdate/:id",checkUserAuth,CourseController.courseUpdate)
 route.get("/courseDelete/:id",checkUserAuth,CourseController.courseDelete)
+
+//contact Route
+route.post('/contactUs/:id',checkUserAuth ,ContactController.contactUs)
+
+route.post('/forgot_Password',FrontController.forgetPasswordVerify)
 
 
 module.exports=route

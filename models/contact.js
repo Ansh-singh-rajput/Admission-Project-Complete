@@ -14,13 +14,22 @@ const ContactSchema = new mongoose.Schema(
             type: String,
             Required: true,
         },
+        course: {
+            type: String,
+            Required: true,
+        },
         description: {
+            type: String,
+            Required: true,
+        },
+        user_id: {
             type: String,
             Required: true,
         }
     },
     { timestamps: true }
 );
+
 const ContactModel = mongoose.model("contact", ContactSchema);
 
 module.exports = ContactModel;
