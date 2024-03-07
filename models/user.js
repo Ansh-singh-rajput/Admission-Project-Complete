@@ -30,6 +30,10 @@ const UserSchema = new mongoose.Schema({
     token:{
         type:String
     },
+    is_verified:{
+        type:Number,
+        default:0
+    },
 }, { timestamps: true })//jb ham insert krege to 2 field dega createdadd -->date time btyegi or update
 const UserModel = mongoose.model('user', UserSchema)
 module.exports = UserModel

@@ -46,7 +46,11 @@ route.get("/courseDelete/:id",checkUserAuth,CourseController.courseDelete)
 //contact Route
 route.post('/contactUs/:id',checkUserAuth ,ContactController.contactUs)
 
+//for forget password
 route.post('/forgot_Password',FrontController.forgetPasswordVerify)
+route.get('/reset-password',FrontController.resetPassword)
+route.post('/reset_Password1',FrontController.reset_Password1)
 
+route.get('/verify',FrontController.verify)
 
 module.exports=route
