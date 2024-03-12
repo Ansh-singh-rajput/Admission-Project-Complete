@@ -165,15 +165,16 @@ class FrontController {
                 const isMatch = await bcrypt.compare(password, user.password)
                 if (isMatch) {
                     //admin login
-                    if (user.role === 'admin') {
+                    if (user.role === 'admin' && user.is_verified==1) {
                         //to generate login
                         const token = jwt.sign({ ID: user.id }, 'guptchabi@123456');
                         //console.log(token)
-                        res.cookie('token', token)
-                        res.redirect('/admin/dashboard')
+                        res.cookie('token', token);
+                        res.redirect('/admin/dashboard');
+                       
                     }
 
-                    else {
+                    else  if(user.role=== "user" && user.is_verified==1){
                         //to generate token
                         const token = jwt.sign({ ID: user.id }, 'guptchabi@123456');
                         //console.log(token)
@@ -181,7 +182,7 @@ class FrontController {
                         res.redirect('/home')
                     }
                 } else {
-                    req.flash('error', 'Email or password is not valid.')
+                    req.flash('error', 'Plz Verified Email Address.')
                     res.redirect('/');
                 }
             } else {

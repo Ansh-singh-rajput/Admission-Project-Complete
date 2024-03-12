@@ -5,6 +5,8 @@ const checkUserAuth=require('../middleware/auth')
 const CourseController = require('../controllers/CourseController')
 const AdminController = require('../controllers/AdminController')
 const ContactController = require('../controllers/ContactController');
+const adminRole = require('../middleware/adminRole')
+const isLogin = require('../middleware/isLogin')
 
 
 
@@ -13,7 +15,7 @@ const ContactController = require('../controllers/ContactController');
 
 
 
-route.get('/',FrontController.login)
+route.get('/',isLogin,FrontController.login)
 route.get('/register',FrontController.register)
 route.get('/home',checkUserAuth,FrontController.home)
 route.get('/about', checkUserAuth, FrontController.about)
@@ -30,7 +32,7 @@ route.post('/changePassword',checkUserAuth,FrontController.changePassword)
 
 
 // admin
-route.get('/admin/dashboard',checkUserAuth, AdminController.dashboard)
+route.get('/admin/dashboard',checkUserAuth, adminRole('admin'), AdminController.dashboard)
 route.post('/update_status/:id',checkUserAuth, AdminController.update_status)
 
 
